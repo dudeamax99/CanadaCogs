@@ -1,0 +1,17 @@
+{
+  "author": [
+    "Dudeamax99"
+  ],
+  "bot_version": [
+    3,
+    0,
+    0
+  ],
+  "description": "Play never have I ever in discord",
+  "hidden": true,
+  "install_msg": "Never Have I ever has been succesfully installed. Load it with `[p]load neverhaveiever` and learn the commands with `[p]help NeverHaveIEver`",
+  "short": "Play Never Have I Ever",
+  "tags": [
+    "dudeamax99"
+  ]
+}
