@@ -28,30 +28,23 @@ class NeverHaveIEver(commands.Cog):
                 return
             users = []
             def check(reaction, user):
-                return str(reaction) == "🇫" and user not in users and not user.bot and reaction.message.id == message.id
-            while (ctx.message.created_at.timestamp() + 60) > datetime.utcnow().timestamp():
+                return str(reaction) == "thumbsup" and user not in users and not user.bot and reaction.message.id == message.id
+            while (ctx.message.created_at.timestamp() + 10) > datetime.utcnow().timestamp():
                 try:
                     reaction, user = await self.bot.wait_for("reaction_add", check=check, timeout=5)
                     users.append(user)
-                    await ctx.send(f"**{user.name}** has paid their respects.")
+                    await ctx.send(f"**{user.name}** has never**{word}**.")
                 except:
                     pass
             if len(users) == 0:
                 try:
-                    await ctx.send(f"No one paid their respects to **{userino.name}**.")
-                except:
-                    await ctx.send(f"No one paid their respects to **{word}**.")
-                    return
+                    await ctx.send(f"Everyone has **{word}**.")
             elif len(users) == 1:
                 try:
-                    await ctx.send(f"{len(users)} person has paid their respects to **{userino.name}**.")
-                except:
-                    await ctx.send(f"{len(users)} person has paid their respects to **{word}**.")
+                    await ctx.send(f"{len(users)} person has never **{word}**.")
             else:
                 try:
-                    await ctx.send(f"{len(users)} people have paid their respects to **{userino.name}**.")
-                except:
-                    await ctx.send(f"{len(users)} people have paid their respects to **{word}**.")
+                    await ctx.send(f"{len(users)} people have never **{word}**.")
         except Exception as e:
             print(e)
             pass
